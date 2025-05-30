@@ -12,6 +12,7 @@ find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
+        Network
         REQUIRED)
 find_package(Boost REQUIRED)
 
@@ -23,6 +24,7 @@ target_link_libraries(FanUpperComputer
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt::Network
 )
 target_link_libraries(FanUpperComputer boost::boost)
 
