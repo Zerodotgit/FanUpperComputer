@@ -25,6 +25,7 @@ private:
 public slots:
     void on_pushButtonConnection_clicked() const;
     void on_pushButtonSwitch_clicked() const;
+    void on_pushButtonSteer_clicked() const;
 };
 
 

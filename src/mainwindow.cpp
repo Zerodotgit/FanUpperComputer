@@ -9,6 +9,7 @@
 
 int connectionStatus = 0; // 0：未连接，1：已连接
 int switchStatus = 0; // 0：关闭，1：开启
+int steeringStatus = 1; // 0：反转，1：正转
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent), ui(new Ui::MainWindow) {
@@ -75,4 +76,26 @@ void MainWindow::on_pushButtonSwitch_clicked() const {
     ui->horizontalSliderRotateSpeedSet->setValue(0);
     ui->lineEditRotateSpeedSet->setText("0");
     switchStatus = 0;
+}
+
+// 旋转方向按钮点击事件处理
+void MainWindow::on_pushButtonSteer_clicked() const {
+    // 发送转动方向状态查询请求，获得风扇当前转动方向
+
+    // 正转方向时
+    if (steeringStatus == 1) {
+        // 发送信息到服务器，设置风扇为反转
+
+        // 接收服务器响应，更新状态
+        ui->pushButtonSteer->setText("反转");
+        steeringStatus = 0;
+        return;
+    }
+
+    // 反转方向时
+    // 发送信息到服务器，设置风扇为正转
+
+    // 接收服务器响应，更新状态
+    ui->pushButtonSteer->setText("正转");
+    steeringStatus = 1;
 }
