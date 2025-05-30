@@ -99,3 +99,28 @@ void MainWindow::on_pushButtonSteer_clicked() const {
     ui->pushButtonSteer->setText("正转");
     steeringStatus = 1;
 }
+
+// 旋转速度滑动条释放事件处理
+void MainWindow::on_horizontalSliderRotateSpeedSet_sliderReleased() const {
+    // 获取滑动条值
+    int value = ui->horizontalSliderRotateSpeedSet->value();
+    ui->lineEditRotateSpeedSet->setText(QString::number(value));
+    std::string rotateSpeed = std::to_string(value);
+
+    // 发送旋转速度到服务器
+
+    // 接收服务器响应，更新当前旋转速度显示
+
+}
+
+// 旋转速度设置输入框回车事件处理
+void MainWindow::on_lineEditRotateSpeedSet_returnPressed() const {
+    // 获取输入框值
+    QString qRotateSpeed = ui->lineEditRotateSpeedSet->text();
+    ui->horizontalSliderRotateSpeedSet->setValue(qRotateSpeed.toInt());
+    std::string rotateSpeed = qRotateSpeed.toStdString();
+
+    // 发送旋转速度到服务器
+
+    // 接收服务器响应，更新当前旋转速度显示
+}
