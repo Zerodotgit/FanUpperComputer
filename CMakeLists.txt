@@ -19,7 +19,9 @@ find_package(Boost REQUIRED)
 add_executable(FanUpperComputer src/main.cpp
         src/mainwindow.cpp
         include/mainwindow.hpp
-        src/mainwindow.ui)
+        src/mainwindow.ui
+        include/opcode.hpp
+)
 target_link_libraries(FanUpperComputer
         Qt::Core
         Qt::Gui
