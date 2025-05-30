@@ -6,6 +6,7 @@
 #define MAINWINDOW_HPP
 
 #include <QWidget>
+#include <QTcpSocket>
 
 
 QT_BEGIN_NAMESPACE
@@ -18,16 +19,18 @@ Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
+    int connectToServer();  // 创建QTcpSocket连接
 
 private:
     Ui::MainWindow *ui;
+    QTcpSocket *tcpSocket = nullptr; // 用于TCP连接的套接字
 
 public slots:
-    void on_pushButtonConnection_clicked() const;
-    void on_pushButtonSwitch_clicked() const;
-    void on_pushButtonSteer_clicked() const;
-    void on_horizontalSliderRotateSpeedSet_sliderReleased() const;
-    void on_lineEditRotateSpeedSet_returnPressed() const;
+    void on_pushButtonConnection_clicked();
+    void on_pushButtonSwitch_clicked();
+    void on_pushButtonSteer_clicked();
+    void on_horizontalSliderRotateSpeedSet_sliderReleased();
+    void on_lineEditRotateSpeedSet_returnPressed();
 };
 
 
