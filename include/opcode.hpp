@@ -24,4 +24,7 @@
 #define FORWARD "0X20:"  // 正转的识别码
 #define REVERSE "0X21:" // 反转的识别码
 
+// 转速
+#define SPEED "0X30:"  // 设置转速的识别码
+
 #endif //OPCODE_HPP
